@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:chest"
+    },
+    {
+      "item": "minecraft:dark_oak_boat"
+    }
+  ],
+  "result": {
+    "item": "boatcontainer:dark_oak_chest_boat",
+    "count": 1
+  }
+}
