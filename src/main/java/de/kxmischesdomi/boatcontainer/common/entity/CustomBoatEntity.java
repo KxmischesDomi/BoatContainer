@@ -24,7 +24,6 @@ public abstract class CustomBoatEntity extends OverwrittenBoatEntity {
 		super(entityType, world, x, y, z);
 	}
 
-
 	@Override
 	protected boolean canAddPassenger(Entity passenger) {
 		return this.getPassengerList().size() < 1 && !this.isSubmergedIn(FluidTags.WATER);

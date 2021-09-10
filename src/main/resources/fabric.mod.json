@@ -1,20 +1,21 @@
 {
   "schemaVersion": 1,
-  "id": "template",
+  "id": "boatcontainer",
   "version": "${version}",
 
-  "name": "MysticCraft",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "BoatContainer",
+  "description": "Wanna put chests and enderchests into boats?",
   "authors": [
     "KxmischesDomi"
   ],
   "contact": {
-    "homepage": "https://kxmischesdomi.de/",
-    "sources": ""
+    "sources": "https://github.com/KxmischesDomi/BoatContainer",
+    "issues": "https://github.com/KxmischesDomi/BoatContainer/issues",
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/boat-container"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/template/icon.png",
+  "license": "GNU GPLv3",
+  "icon": "assets/boatcontainer/icon.png",
 
   "environment": "*",
   "entrypoints": {
