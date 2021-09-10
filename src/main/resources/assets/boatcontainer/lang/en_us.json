@@ -13,15 +13,7 @@
   "item.boatcontainer.acacia_ender_chest_boat": "Acacia Boat Ender Chest",
   "item.boatcontainer.dark_oak_ender_chest_boat": "Dark Oak Boat Ender Chest",
 
-  "item.boatcontainer.oak_shulker_boat": "Oak Boat Ender Chest",
-  "item.boatcontainer.spruce_shulker_boat": "Spruce Boat Ender Chest",
-  "item.boatcontainer.birch_shulker_boat": "Birch Boat Ender Chest",
-  "item.boatcontainer.jungle_shulker_boat": "Junge Boat Ender Chest",
-  "item.boatcontainer.acacia_shulker_boat": "Acacia Boat Ender Chest",
-  "item.boatcontainer.dark_oak_shulker_boat": "Dark Oak Boat Ender Chest",
-
   "entity.boatcontainer.chest_boat": "Chest Boat",
-  "entity.boatcontainer.ender_chest_boat": "Ender Chest Boat",
-  "entity.boatcontainer.shulker_boat": "Shulker Boat"
+  "entity.boatcontainer.ender_chest_boat": "Ender Chest Boat"
 
 }
