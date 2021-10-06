@@ -4,7 +4,7 @@
   "package": "de.kxmischesdomi.boatcontainer.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-
+    "BoatEntityAccessor"
   ],
   "client": [
   ],
