@@ -1,0 +1,19 @@
+{
+  "item.boatcontainer.oak_chest_boat": "Dębowa łódka ze skrzynią",
+  "item.boatcontainer.spruce_chest_boat": "Świerkowa łódka ze skrzynią",
+  "item.boatcontainer.birch_chest_boat": "Brzozowa łódka ze skrzynią",
+  "item.boatcontainer.jungle_chest_boat": "Dżunglowa łódka ze skrzynią",
+  "item.boatcontainer.acacia_chest_boat": "Akacjowa łódka ze skrzynią",
+  "item.boatcontainer.dark_oak_chest_boat": "Łódka z ciemnego dębu ze skrzynią",
+
+  "item.boatcontainer.oak_ender_chest_boat": "Dębowa łódka ze skrzynią Endu",
+  "item.boatcontainer.spruce_ender_chest_boat": "Świerkowa łódka ze skrzynią Endu",
+  "item.boatcontainer.birch_ender_chest_boat": "Brzozowa łódka ze skrzynią Endu",
+  "item.boatcontainer.jungle_ender_chest_boat": "Dżunglowa łódka ze skrzynią Endu",
+  "item.boatcontainer.acacia_ender_chest_boat": "Akacjowa łódka ze skrzynią Endu",
+  "item.boatcontainer.dark_oak_ender_chest_boat": "Łódka z ciemnego dębu ze skrzynią Endu",
+
+  "entity.boatcontainer.chest_boat": "Łódka ze skrzynią",
+  "entity.boatcontainer.ender_chest_boat": "Łódka ze skrzynią Endu"
+
+}
