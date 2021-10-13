@@ -1,0 +1,19 @@
+{
+  "item.boatcontainer.oak_chest_boat": "Eichenholzboot mit Truhe",
+  "item.boatcontainer.spruce_chest_boat": "Fichtenholzboot mit Truhe",
+  "item.boatcontainer.birch_chest_boat": "Birkenholzboot mit Truhe",
+  "item.boatcontainer.jungle_chest_boat": "Tropenholzboot mit Truhe",
+  "item.boatcontainer.acacia_chest_boat": "Akazienholzboot mit Truhe",
+  "item.boatcontainer.dark_oak_chest_boat": "Schwarzeichenholzboot mit Truhe",
+
+  "item.boatcontainer.oak_ender_chest_boat": "Eichenholzboot mit Endertruhe",
+  "item.boatcontainer.spruce_ender_chest_boat": "Fichtenholzboot mit Endertruhe",
+  "item.boatcontainer.birch_ender_chest_boat": "Birkenholzboot mit Endertruhe",
+  "item.boatcontainer.jungle_ender_chest_boat": "Tropenholzboot mit Endertruhe",
+  "item.boatcontainer.acacia_ender_chest_boat": "Akazienholzboot mit Endertruhe",
+  "item.boatcontainer.dark_oak_ender_chest_boat": "Schwarzeichenholzboot mit Endertruhe",
+
+  "entity.boatcontainer.chest_boat": "Boot mit Truhe",
+  "entity.boatcontainer.ender_chest_boat": "Boot mit Endertruhe"
+
+}
