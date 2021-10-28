@@ -1,7 +1,6 @@
 package de.kxmischesdomi.boatcontainer.common.entity;
 
 import de.kxmischesdomi.boatcontainer.common.registry.ModEntities;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
@@ -56,20 +55,11 @@ public class EnderChestBoatEntity extends CustomBoatEntity {
 		if (world.getServer() == null) return;
 		LootTable lootTable = world.getServer().getLootManager().getTable(new Identifier("blocks/ender_chest"));
 
-		PlayerEntity killer = null;
-		ItemStack tool = null;
-		if (source.getAttacker() != null && source.getAttacker() instanceof PlayerEntity) {
-			killer = ((PlayerEntity) source.getAttacker());
-			tool = killer.getMainHandStack() == ItemStack.EMPTY ? killer.getOffHandStack() : killer.getMainHandStack();
-		}
-
 		Builder builder = new Builder((ServerWorld) world)
 				.parameter(LootContextParameters.ORIGIN, getPos())
-				.parameter(LootContextParameters.BLOCK_STATE, Blocks.ENDER_CHEST.getDefaultState())
-				.parameter(LootContextParameters.TOOL, tool)
-				.optionalParameter(LootContextParameters.THIS_ENTITY, killer)
+				.optionalParameter(LootContextParameters.THIS_ENTITY, this)
 				.random(this.random);
-		List<ItemStack> itemStacks = lootTable.generateLoot(builder.build(LootContextTypes.BLOCK));
+		List<ItemStack> itemStacks = lootTable.generateLoot(builder.build(LootContextTypes.GIFT));
 
 		for (ItemStack itemStack : itemStacks) {
 			dropStack(itemStack);
