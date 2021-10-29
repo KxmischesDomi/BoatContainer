@@ -57,7 +57,7 @@ public class EnderChestBoatEntity extends CustomBoatEntity {
 		LootTable lootTable = world.getServer().getLootManager().getTable(new Identifier("blocks/ender_chest"));
 
 		PlayerEntity killer = null;
-		ItemStack tool = null;
+		ItemStack tool = ItemStack.EMPTY;
 		if (source.getAttacker() != null && source.getAttacker() instanceof PlayerEntity) {
 			killer = ((PlayerEntity) source.getAttacker());
 			tool = killer.getMainHandStack() == ItemStack.EMPTY ? killer.getOffHandStack() : killer.getMainHandStack();
@@ -67,9 +67,10 @@ public class EnderChestBoatEntity extends CustomBoatEntity {
 				.parameter(LootContextParameters.ORIGIN, getPos())
 				.parameter(LootContextParameters.BLOCK_STATE, Blocks.ENDER_CHEST.getDefaultState())
 				.parameter(LootContextParameters.TOOL, tool)
-				.optionalParameter(LootContextParameters.THIS_ENTITY, killer)
+				.optionalParameter(LootContextParameters.THIS_ENTITY, this)
+				.optionalParameter(LootContextParameters.KILLER_ENTITY, killer)
 				.random(this.random);
-		List<ItemStack> itemStacks = lootTable.generateLoot(builder.build(LootContextTypes.BLOCK));
+		List<ItemStack> itemStacks = lootTable.generateLoot(builder.build(LootContextTypes.ENTITY));
 
 		for (ItemStack itemStack : itemStacks) {
 			dropStack(itemStack);
