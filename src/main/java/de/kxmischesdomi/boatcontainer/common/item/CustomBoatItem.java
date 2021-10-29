@@ -1,7 +1,7 @@
 package de.kxmischesdomi.boatcontainer.common.item;
 
 import com.mojang.datafixers.util.Function5;
-import de.kxmischesdomi.boatcontainer.common.entity.OverwrittenBoatEntity;
+import de.kxmischesdomi.boatcontainer.common.entity.OverriddenBoatEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -32,10 +32,10 @@ public class CustomBoatItem extends Item {
 
 	private static final Predicate<Entity> RIDERS;
 	private final BoatEntity.Type type;
-	private final EntityType<? extends OverwrittenBoatEntity> entityType;
-	private final Function5<EntityType<? extends OverwrittenBoatEntity>, World, Double, Double, Double, ? extends OverwrittenBoatEntity> instanceCreator;
+	private final EntityType<? extends OverriddenBoatEntity> entityType;
+	private final Function5<EntityType<? extends OverriddenBoatEntity>, World, Double, Double, Double, ? extends OverriddenBoatEntity> instanceCreator;
 
-	public CustomBoatItem(EntityType<? extends OverwrittenBoatEntity> entityType, Function5<EntityType<? extends OverwrittenBoatEntity>, World, Double, Double, Double, ? extends OverwrittenBoatEntity> instanceCreator, BoatEntity.Type type, Settings settings) {
+	public CustomBoatItem(EntityType<? extends OverriddenBoatEntity> entityType, Function5<EntityType<? extends OverriddenBoatEntity>, World, Double, Double, Double, ? extends OverriddenBoatEntity> instanceCreator, BoatEntity.Type type, Settings settings) {
 		super(settings);
 		this.entityType = entityType;
 		this.type = type;
@@ -66,7 +66,7 @@ public class CustomBoatItem extends Item {
 
 			if (hitResult.getType() == HitResult.Type.BLOCK) {
 
-				OverwrittenBoatEntity boatEntity = instanceCreator.apply(entityType, world, hitResult.getPos().x, hitResult.getPos().y, hitResult.getPos().z);
+				OverriddenBoatEntity boatEntity = instanceCreator.apply(entityType, world, hitResult.getPos().x, hitResult.getPos().y, hitResult.getPos().z);
 				boatEntity.setBoatType(this.type);
 				boatEntity.setYaw(user.getYaw());
 

@@ -13,7 +13,7 @@ import net.minecraft.world.World;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public abstract class CustomBoatEntity extends OverwrittenBoatEntity {
+public abstract class CustomBoatEntity extends OverriddenBoatEntity {
 
 	public CustomBoatEntity(EntityType<? extends BoatEntity> entityType, World world) {
 		super(entityType, world);

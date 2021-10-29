@@ -14,13 +14,13 @@ import net.minecraft.world.event.GameEvent;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public abstract class OverwrittenBoatEntity extends BoatEntity {
+public abstract class OverriddenBoatEntity extends BoatEntity {
 
-	public OverwrittenBoatEntity(EntityType<? extends BoatEntity> entityType, World world) {
+	public OverriddenBoatEntity(EntityType<? extends BoatEntity> entityType, World world) {
 		super(entityType, world);
 	}
 
-	public OverwrittenBoatEntity(EntityType<? extends BoatEntity> entityType, World world, double x, double y, double z) {
+	public OverriddenBoatEntity(EntityType<? extends BoatEntity> entityType, World world, double x, double y, double z) {
 		super(entityType, world);
 		this.setPosition(x, y, z);
 		this.prevX = x;

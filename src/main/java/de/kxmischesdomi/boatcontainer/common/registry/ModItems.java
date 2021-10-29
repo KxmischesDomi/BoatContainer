@@ -4,7 +4,7 @@ import com.mojang.datafixers.util.Function5;
 import de.kxmischesdomi.boatcontainer.BoatContainer;
 import de.kxmischesdomi.boatcontainer.common.entity.ChestBoatEntity;
 import de.kxmischesdomi.boatcontainer.common.entity.EnderChestBoatEntity;
-import de.kxmischesdomi.boatcontainer.common.entity.OverwrittenBoatEntity;
+import de.kxmischesdomi.boatcontainer.common.entity.OverriddenBoatEntity;
 import de.kxmischesdomi.boatcontainer.common.item.CustomBoatItem;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.vehicle.BoatEntity.Type;
@@ -29,7 +29,7 @@ public class ModItems {
 
 	public static void init() {}
 
-	public static CustomBoatItem[] registerBoat(String name, EntityType<? extends OverwrittenBoatEntity> type, Function5<EntityType<? extends OverwrittenBoatEntity>, World, Double, Double, Double, ? extends OverwrittenBoatEntity> instanceCreator) {
+	public static CustomBoatItem[] registerBoat(String name, EntityType<? extends OverriddenBoatEntity> type, Function5<EntityType<? extends OverriddenBoatEntity>, World, Double, Double, Double, ? extends OverriddenBoatEntity> instanceCreator) {
 
 		List<CustomBoatItem> list = new ArrayList<>();
 
