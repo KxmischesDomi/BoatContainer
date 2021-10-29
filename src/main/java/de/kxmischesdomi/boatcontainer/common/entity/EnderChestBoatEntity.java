@@ -67,10 +67,9 @@ public class EnderChestBoatEntity extends CustomBoatEntity {
 				.parameter(LootContextParameters.ORIGIN, getPos())
 				.parameter(LootContextParameters.BLOCK_STATE, Blocks.ENDER_CHEST.getDefaultState())
 				.parameter(LootContextParameters.TOOL, tool)
-				.optionalParameter(LootContextParameters.THIS_ENTITY, this)
-				.optionalParameter(LootContextParameters.KILLER_ENTITY, killer)
+				.optionalParameter(LootContextParameters.THIS_ENTITY, killer)
 				.random(this.random);
-		List<ItemStack> itemStacks = lootTable.generateLoot(builder.build(LootContextTypes.ENTITY));
+		List<ItemStack> itemStacks = lootTable.generateLoot(builder.build(LootContextTypes.BLOCK));
 
 		for (ItemStack itemStack : itemStacks) {
 			dropStack(itemStack);
