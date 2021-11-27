@@ -1,25 +1,25 @@
 package de.kxmischesdomi.boatcontainer.common.entity;
 
 import de.kxmischesdomi.boatcontainer.common.registry.ModEntities;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.vehicle.BoatEntity;
-import net.minecraft.inventory.EnderChestInventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.loot.LootTable;
-import net.minecraft.loot.context.LootContext.Builder;
-import net.minecraft.loot.context.LootContextParameters;
-import net.minecraft.loot.context.LootContextTypes;
-import net.minecraft.screen.GenericContainerScreenHandler;
-import net.minecraft.screen.SimpleNamedScreenHandlerFactory;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.text.TranslatableText;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.SimpleMenuProvider;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.inventory.ChestMenu;
+import net.minecraft.world.inventory.PlayerEnderChestContainer;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.storage.loot.LootContext.Builder;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 
 import java.util.List;
 
@@ -29,50 +29,50 @@ import java.util.List;
  */
 public class EnderChestBoatEntity extends CustomBoatEntity {
 
-	public EnderChestBoatEntity(EntityType<? extends BoatEntity> entityType, World world) {
+	public EnderChestBoatEntity(EntityType<? extends Boat> entityType, Level world) {
 		super(entityType, world);
 	}
 
-	public EnderChestBoatEntity(EntityType<? extends BoatEntity> type, World world, double x, double y, double z) {
+	public EnderChestBoatEntity(EntityType<? extends Boat> type, Level world, double x, double y, double z) {
 		super(type, world, x, y, z);
 	}
 
-	public EnderChestBoatEntity(World world) {
+	public EnderChestBoatEntity(Level world) {
 		super(ModEntities.ENDER_CHEST_BOAT, world);
 	}
 
 	@Override
-	public ActionResult sneakInteract(PlayerEntity playerEntity, Hand hand) {
-		EnderChestInventory enderChestInventory = playerEntity.getEnderChestInventory();
-		playerEntity.openHandledScreen(new SimpleNamedScreenHandlerFactory((syncId, inventory, playerx) -> {
-			return GenericContainerScreenHandler.createGeneric9x3(syncId, inventory, enderChestInventory);
-		}, new TranslatableText(this.getType().getTranslationKey())));
-		return ActionResult.SUCCESS;
+	public InteractionResult sneakInteract(Player playerEntity, InteractionHand hand) {
+		PlayerEnderChestContainer enderChestInventory = playerEntity.getEnderChestInventory();
+		playerEntity.openMenu(new SimpleMenuProvider((syncId, inventory, playerx) -> {
+			return ChestMenu.threeRows(syncId, inventory, enderChestInventory);
+		}, new TranslatableComponent(this.getType().getDescriptionId())));
+		return InteractionResult.SUCCESS;
 	}
 
 	@Override
 	public void dropItems(DamageSource source) {
 		super.dropItems(source);
-		if (world.getServer() == null) return;
-		LootTable lootTable = world.getServer().getLootManager().getTable(new Identifier("blocks/ender_chest"));
+		if (level.getServer() == null) return;
+		LootTable lootTable = level.getServer().getLootTables().get(new ResourceLocation("blocks/ender_chest"));
 
-		PlayerEntity killer = null;
+		Player killer = null;
 		ItemStack tool = ItemStack.EMPTY;
-		if (source.getAttacker() != null && source.getAttacker() instanceof PlayerEntity) {
-			killer = ((PlayerEntity) source.getAttacker());
-			tool = killer.getMainHandStack() == ItemStack.EMPTY ? killer.getOffHandStack() : killer.getMainHandStack();
+		if (source.getEntity() != null && source.getEntity() instanceof Player) {
+			killer = ((Player) source.getEntity());
+			tool = killer.getMainHandItem() == ItemStack.EMPTY ? killer.getOffhandItem() : killer.getMainHandItem();
 		}
 
-		Builder builder = new Builder((ServerWorld) world)
-				.parameter(LootContextParameters.ORIGIN, getPos())
-				.parameter(LootContextParameters.BLOCK_STATE, Blocks.ENDER_CHEST.getDefaultState())
-				.parameter(LootContextParameters.TOOL, tool)
-				.optionalParameter(LootContextParameters.THIS_ENTITY, killer)
-				.random(this.random);
-		List<ItemStack> itemStacks = lootTable.generateLoot(builder.build(LootContextTypes.BLOCK));
+		Builder builder = new Builder((ServerLevel) level)
+				.withParameter(LootContextParams.ORIGIN, position())
+				.withParameter(LootContextParams.BLOCK_STATE, Blocks.ENDER_CHEST.defaultBlockState())
+				.withParameter(LootContextParams.TOOL, tool)
+				.withOptionalParameter(LootContextParams.THIS_ENTITY, killer)
+				.withRandom(this.random);
+		List<ItemStack> itemStacks = lootTable.getRandomItems(builder.create(LootContextParamSets.BLOCK));
 
 		for (ItemStack itemStack : itemStacks) {
-			dropStack(itemStack);
+			spawnAtLocation(itemStack);
 		}
 
 	}

@@ -6,14 +6,14 @@ import de.kxmischesdomi.boatcontainer.common.entity.ChestBoatEntity;
 import de.kxmischesdomi.boatcontainer.common.entity.EnderChestBoatEntity;
 import de.kxmischesdomi.boatcontainer.common.entity.OverriddenBoatEntity;
 import de.kxmischesdomi.boatcontainer.common.item.CustomBoatItem;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.vehicle.BoatEntity.Type;
-import net.minecraft.item.Item;
-import net.minecraft.item.Item.Settings;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.World;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.vehicle.Boat.Type;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Item.Properties;
+import net.minecraft.world.level.Level;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +29,12 @@ public class ModItems {
 
 	public static void init() {}
 
-	public static CustomBoatItem[] registerBoat(String name, EntityType<? extends OverriddenBoatEntity> type, Function5<EntityType<? extends OverriddenBoatEntity>, World, Double, Double, Double, ? extends OverriddenBoatEntity> instanceCreator) {
+	public static CustomBoatItem[] registerBoat(String name, EntityType<? extends OverriddenBoatEntity> type, Function5<EntityType<? extends OverriddenBoatEntity>, Level, Double, Double, Double, ? extends OverriddenBoatEntity> instanceCreator) {
 
 		List<CustomBoatItem> list = new ArrayList<>();
 
 		for (Type value : Type.values()) {
-			CustomBoatItem item = register(value.getName() + "_" + name, new CustomBoatItem(type, instanceCreator, value, new Settings().maxCount(1).group(ItemGroup.TRANSPORTATION)));
+			CustomBoatItem item = register(value.getName() + "_" + name, new CustomBoatItem(type, instanceCreator, value, new Properties().stacksTo(1).tab(CreativeModeTab.TAB_TRANSPORTATION)));
 			list.add(item);
 		}
 
@@ -42,7 +42,7 @@ public class ModItems {
 	}
 
 	public static <T extends Item> T register(String name, T item) {
-		Registry.register(Registry.ITEM, new Identifier(BoatContainer.MOD_ID, name), item);
+		Registry.register(Registry.ITEM, new ResourceLocation(BoatContainer.MOD_ID, name), item);
 		return item;
 	}
 

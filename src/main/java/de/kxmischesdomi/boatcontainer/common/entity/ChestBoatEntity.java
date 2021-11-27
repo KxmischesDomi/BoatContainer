@@ -1,15 +1,15 @@
 package de.kxmischesdomi.boatcontainer.common.entity;
 
 import de.kxmischesdomi.boatcontainer.common.registry.ModEntities;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.entity.vehicle.BoatEntity;
-import net.minecraft.item.Items;
-import net.minecraft.screen.GenericContainerScreenHandler;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.world.World;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ChestMenu;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 
 /**
  * @author KxmischesDomi | https://github.com/kxmischesdomi
@@ -17,30 +17,30 @@ import net.minecraft.world.World;
  */
 public class ChestBoatEntity extends StorageBoatEntity {
 
-	public ChestBoatEntity(EntityType<? extends BoatEntity> entityType, World world) {
+	public ChestBoatEntity(EntityType<? extends Boat> entityType, Level world) {
 		super(entityType, world);
 	}
 
-	public ChestBoatEntity(EntityType<? extends BoatEntity> type, World world, double x, double y, double z) {
+	public ChestBoatEntity(EntityType<? extends Boat> type, Level world, double x, double y, double z) {
 		super(type, world, x, y, z);
 	}
 
-	public ChestBoatEntity(World world) {
+	public ChestBoatEntity(Level world) {
 		super(ModEntities.CHEST_BOAT, world);
 	}
 
-	public int size() {
+	public int getContainerSize() {
 		return 27;
 	}
 
-	public ScreenHandler getScreenHandler(int syncId, PlayerEntity playerEntity, PlayerInventory playerInventory) {
-		return GenericContainerScreenHandler.createGeneric9x3(syncId, playerInventory, this);
+	public AbstractContainerMenu getScreenHandler(int syncId, Player playerEntity, Inventory playerInventory) {
+		return ChestMenu.threeRows(syncId, playerInventory, this);
 	}
 
 	@Override
 	public void dropItems(DamageSource damageSource) {
 		super.dropItems(damageSource);
-		this.dropItem(Items.CHEST.asItem());
+		this.spawnAtLocation(Items.CHEST.asItem());
 	}
 
 }

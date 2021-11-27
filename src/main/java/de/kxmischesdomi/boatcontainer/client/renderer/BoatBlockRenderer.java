@@ -1,11 +1,11 @@
 package de.kxmischesdomi.boatcontainer.client.renderer;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.block.BlockState;
-import net.minecraft.client.render.entity.EntityRendererFactory.Context;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.vehicle.BoatEntity;
+import net.minecraft.client.renderer.entity.EntityRendererProvider.Context;
+import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.level.block.state.BlockState;
 
 /**
  * @author KxmischesDomi | https://github.com/kxmischesdomi
@@ -22,12 +22,12 @@ public class BoatBlockRenderer extends AbstractBoatBlockRenderer {
 	}
 
 	@Override
-	public BlockState getBlockState(BoatEntity boatEntity) {
+	public BlockState getBlockState(Boat boatEntity) {
 		return blockState;
 	}
 
 	@Override
-	public void modifyMatrix(MatrixStack matrixStack) {
+	public void modifyMatrix(PoseStack matrixStack) {
 
 	}
 
