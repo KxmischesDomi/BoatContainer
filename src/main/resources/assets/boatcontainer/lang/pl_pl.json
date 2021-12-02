@@ -5,6 +5,7 @@
   "item.boatcontainer.jungle_chest_boat": "Dżunglowa łódka ze skrzynią",
   "item.boatcontainer.acacia_chest_boat": "Akacjowa łódka ze skrzynią",
   "item.boatcontainer.dark_oak_chest_boat": "Łódka z ciemnego dębu ze skrzynią",
+  "item.boatcontainer.stripped_bamboo_chest_boat": "Okorowany bambusowa Łódka ze skrzynią",
 
   "item.boatcontainer.oak_ender_chest_boat": "Dębowa łódka ze skrzynią Endu",
   "item.boatcontainer.spruce_ender_chest_boat": "Świerkowa łódka ze skrzynią Endu",
@@ -12,6 +13,7 @@
   "item.boatcontainer.jungle_ender_chest_boat": "Dżunglowa łódka ze skrzynią Endu",
   "item.boatcontainer.acacia_ender_chest_boat": "Akacjowa łódka ze skrzynią Endu",
   "item.boatcontainer.dark_oak_ender_chest_boat": "Łódka z ciemnego dębu ze skrzynią Endu",
+  "item.boatcontainer.stripped_bamboo_ender_chest_boat": "Okorowany bambusowa Łódka ze skrzynią Endu",
 
   "entity.boatcontainer.chest_boat": "Łódka ze skrzynią",
   "entity.boatcontainer.ender_chest_boat": "Łódka ze skrzynią Endu"

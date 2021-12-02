@@ -5,6 +5,7 @@
   "item.boatcontainer.jungle_chest_boat": "Bote de madeira da selva com báu",
   "item.boatcontainer.acacia_chest_boat": "Bote de acácia com baú",
   "item.boatcontainer.dark_oak_chest_boat": "Bote de carvalho escuro com baú",
+  "item.boatcontainer.stripped_bamboo_chest_boat": "Bote de bambu descascada com peito",
 
   "item.boatcontainer.oak_ender_chest_boat": "Bote de carvalho com baú de ender",
   "item.boatcontainer.spruce_ender_chest_boat": "Bote de pinheiro com baú de ender",
@@ -12,6 +13,7 @@
   "item.boatcontainer.jungle_ender_chest_boat": "Bote de madeira da selva com baú de ender",
   "item.boatcontainer.acacia_ender_chest_boat": "Bote de acácia com baú de ender",
   "item.boatcontainer.dark_oak_ender_chest_boat": "Bote de pinheiro escuro com baú de ender",
+  "item.boatcontainer.stripped_bamboo_ender_chest_boat": "Bote de bambu descascada com baú de ender",
 
   "entity.boatcontainer.chest_boat": "Bote com baú",
   "entity.boatcontainer.ender_chest_boat": "Bote com baú de ender"
