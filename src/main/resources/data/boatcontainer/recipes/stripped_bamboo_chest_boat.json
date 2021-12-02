@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:ender_chest"
+    },
+    {
+      "item": "twigs:stripped_bamboo_boat"
+    }
+  ],
+  "result": {
+    "item": "boatcontainer:stripped_bamboo_ender_chest_boat",
+    "count": 1
+  }
+}
