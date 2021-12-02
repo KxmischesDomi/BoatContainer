@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "boatcontainer:item/oak_ender_chest_boat"
+    "layer0": "boatcontainer:item/oak_boat",
+    "layer1": "boatcontainer:item/ender_chest_boat"
   }
 }
