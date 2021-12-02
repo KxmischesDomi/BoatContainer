@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "boatcontainer:item/stripped_bamboo_ender_chest_boat"
+  }
+}
