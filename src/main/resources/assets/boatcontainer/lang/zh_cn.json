@@ -1,0 +1,21 @@
+{
+  "item.boatcontainer.oak_chest_boat": "橡木箱船",
+  "item.boatcontainer.spruce_chest_boat": "云杉木箱船",
+  "item.boatcontainer.birch_chest_boat": " 白桦箱船",
+  "item.boatcontainer.jungle_chest_boat": "丛林木箱船",
+  "item.boatcontainer.acacia_chest_boat": "金合欢木箱船 ",
+  "item.boatcontainer.dark_oak_chest_boat": "深色橡木箱船",
+  "item.boatcontainer.stripped_bamboo_chest_boat": "去皮竹子箱船",
+
+  "item.boatcontainer.oak_ender_chest_boat": "橡木末影箱船",
+  "item.boatcontainer.spruce_ender_chest_boat": "云杉木末影箱船",
+  "item.boatcontainer.birch_ender_chest_boat": "白桦末影箱船",
+  "item.boatcontainer.jungle_ender_chest_boat": "丛林木末影箱船",
+  "item.boatcontainer.acacia_ender_chest_boat": "金合欢木末影箱船",
+  "item.boatcontainer.dark_oak_ender_chest_boat": "深色橡木末影箱船",
+  "item.boatcontainer.stripped_bamboo_ender_chest_boat": "去皮竹子末影箱船",
+
+  "entity.boatcontainer.chest_boat": "箱船",
+  "entity.boatcontainer.ender_chest_boat": "末影箱船"
+
+}
