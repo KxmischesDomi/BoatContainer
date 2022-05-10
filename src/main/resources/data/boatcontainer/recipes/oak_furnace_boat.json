@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:furnace"
+    },
+    {
+      "item": "minecraft:oak_boat"
+    }
+  ],
+  "result": {
+    "item": "boatcontainer:oak_furnace_boat",
+    "count": 1
+  }
+}
