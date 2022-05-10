@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 
 /**
  * @author KxmischesDomi | https://github.com/kxmischesdomi
- * @since 1.1
+ * @since 1.0
  */
 @Mixin(Boat.class)
 public interface BoatEntityAccessor {
