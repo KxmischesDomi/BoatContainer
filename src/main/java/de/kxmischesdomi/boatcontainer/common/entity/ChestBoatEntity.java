@@ -10,6 +10,8 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 
 /**
  * @author KxmischesDomi | https://github.com/kxmischesdomi
@@ -40,7 +42,14 @@ public class ChestBoatEntity extends StorageBoatEntity {
 	@Override
 	public void dropItems(DamageSource damageSource) {
 		super.dropItems(damageSource);
-		this.spawnAtLocation(Items.CHEST.asItem());
+		if (!damageSource.isExplosion()) {
+			this.spawnAtLocation(Items.CHEST.asItem());
+		}
+	}
+
+	@Override
+	public BlockState getDisplayBlockState() {
+		return Blocks.CHEST.defaultBlockState();
 	}
 
 }

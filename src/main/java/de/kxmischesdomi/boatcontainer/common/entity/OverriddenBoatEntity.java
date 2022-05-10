@@ -9,6 +9,7 @@ import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.Vec3;
 
 /**
  * @author KxmischesDomi | https://github.com/kxmischesdomi
@@ -78,6 +79,10 @@ public abstract class OverriddenBoatEntity extends Boat {
 
 	public InteractionResult sneakInteract(Player playerEntity, InteractionHand hand) {
 		return InteractionResult.PASS;
+	}
+
+	public Vec3 modifyDeltaMovement(Vec3 vec3) {
+		return vec3;
 	}
 
 }

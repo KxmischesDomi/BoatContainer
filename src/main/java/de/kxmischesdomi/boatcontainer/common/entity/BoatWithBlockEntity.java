@@ -7,19 +7,20 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
 /**
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public abstract class CustomBoatEntity extends OverriddenBoatEntity {
+public abstract class BoatWithBlockEntity extends OverriddenBoatEntity {
 
-	public CustomBoatEntity(EntityType<? extends Boat> entityType, Level world) {
+	public BoatWithBlockEntity(EntityType<? extends Boat> entityType, Level world) {
 		super(entityType, world);
 	}
 
-	public CustomBoatEntity(EntityType<? extends Boat> entityType, Level world, double x, double y, double z) {
+	public BoatWithBlockEntity(EntityType<? extends Boat> entityType, Level world, double x, double y, double z) {
 		super(entityType, world, x, y, z);
 	}
 
@@ -59,5 +60,7 @@ public abstract class CustomBoatEntity extends OverriddenBoatEntity {
 
 		}
 	}
+
+	public abstract BlockState getDisplayBlockState();
 
 }

@@ -30,7 +30,7 @@ import java.util.Iterator;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public abstract class StorageBoatEntity extends CustomBoatEntity implements Container, MenuProvider {
+public abstract class StorageBoatEntity extends BoatWithBlockEntity implements Container, MenuProvider {
 
 	private NonNullList<ItemStack> inventory;
 	private ResourceLocation lootTableId;

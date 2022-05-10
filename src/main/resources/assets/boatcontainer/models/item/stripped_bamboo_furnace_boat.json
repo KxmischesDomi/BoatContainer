@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "twigs:item/stripped_bamboo_boat",
+    "layer1": "boatcontainer:item/furnace_boat"
+  }
+}

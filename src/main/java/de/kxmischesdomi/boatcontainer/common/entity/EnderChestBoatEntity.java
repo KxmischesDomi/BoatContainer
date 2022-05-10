@@ -16,6 +16,7 @@ import net.minecraft.world.inventory.PlayerEnderChestContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootContext.Builder;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -27,7 +28,7 @@ import java.util.List;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public class EnderChestBoatEntity extends CustomBoatEntity {
+public class EnderChestBoatEntity extends BoatWithBlockEntity {
 
 	public EnderChestBoatEntity(EntityType<? extends Boat> entityType, Level world) {
 		super(entityType, world);
@@ -75,6 +76,11 @@ public class EnderChestBoatEntity extends CustomBoatEntity {
 			spawnAtLocation(itemStack);
 		}
 
+	}
+
+	@Override
+	public BlockState getDisplayBlockState() {
+		return Blocks.ENDER_CHEST.defaultBlockState();
 	}
 
 }
