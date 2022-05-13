@@ -6,11 +6,11 @@
       "item": "minecraft:ender_chest"
     },
     {
-      "item": "minecraft:jungle_boat"
+      "item": "minecraft:dark_oak_boat"
     }
   ],
   "result": {
-    "item": "boatcontainer:jungle_ender_chest_boat",
+    "item": "boatcontainer:dark_oak_ender_chest_boat",
     "count": 1
   }
 }
