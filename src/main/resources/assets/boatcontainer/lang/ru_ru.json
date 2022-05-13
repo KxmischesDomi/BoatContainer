@@ -1,0 +1,21 @@
+{
+  "item.boatcontainer.oak_chest_boat": "Дубовая лодка с сундуком",
+  "item.boatcontainer.spruce_chest_boat": "Еловая лодка с сундуком",
+  "item.boatcontainer.birch_chest_boat": "Берёзовая лодка с сундуком",
+  "item.boatcontainer.jungle_chest_boat": "Лодка из тропического дерева с сундуком",
+  "item.boatcontainer.acacia_chest_boat": "Акациевая лодка с сундуком",
+  "item.boatcontainer.dark_oak_chest_boat": "Лодка из тёмного дуба с сундуком",
+  "item.boatcontainer.stripped_bamboo_chest_boat": "Бамбуковая лодка с сундуком",
+
+  "item.boatcontainer.oak_ender_chest_boat": "Дубовая лодка с эндер-сундуком",
+  "item.boatcontainer.spruce_ender_chest_boat": "Еловая лодка с эндер-сундуком",
+  "item.boatcontainer.birch_ender_chest_boat": "Берёзовая лодка с эндер-сундуком",
+  "item.boatcontainer.jungle_ender_chest_boat": "Лодка из тропического дерева с эндер-сундуком",
+  "item.boatcontainer.acacia_ender_chest_boat": "Акациевая лодка с эндер-сундуком",
+  "item.boatcontainer.dark_oak_ender_chest_boat": "Лодка из тёмного дуба с эндер-сундуком",
+  "item.boatcontainer.stripped_bamboo_ender_chest_boat": "Бамбуковая лодка с эндер-сундуком",
+
+  "entity.boatcontainer.chest_boat": "Лодка с сундуком",
+  "entity.boatcontainer.ender_chest_boat": "Лодка с эндер-сундуком"
+
+}
