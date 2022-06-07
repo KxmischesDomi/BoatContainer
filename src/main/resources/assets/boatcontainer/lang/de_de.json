@@ -5,6 +5,7 @@
   "item.boatcontainer.jungle_chest_boat": "Tropenholzboot mit Truhe",
   "item.boatcontainer.acacia_chest_boat": "Akazienholzboot mit Truhe",
   "item.boatcontainer.dark_oak_chest_boat": "Schwarzeichenholzboot mit Truhe",
+  "item.boatcontainer.mangrove_chest_boat": "Mangrovenholzboot mit Truhe",
   "item.boatcontainer.stripped_bamboo_chest_boat": "Entrindetes Bambusboot mit Truhe",
 
   "item.boatcontainer.oak_ender_chest_boat": "Eichenholzboot mit Endertruhe",
@@ -13,6 +14,7 @@
   "item.boatcontainer.jungle_ender_chest_boat": "Tropenholzboot mit Endertruhe",
   "item.boatcontainer.acacia_ender_chest_boat": "Akazienholzboot mit Endertruhe",
   "item.boatcontainer.dark_oak_ender_chest_boat": "Schwarzeichenholzboot mit Endertruhe",
+  "item.boatcontainer.mangrove_chest_boat": "Mangrovenholzboot mit Endertruhe",
   "item.boatcontainer.stripped_bamboo_ender_chest_boat": "Entrindetes Bambusboot mit Endertruhe",
 
   "item.boatcontainer.oak_furnace_boat": "Eichenholzboot mit Ofen",
@@ -21,6 +23,7 @@
   "item.boatcontainer.jungle_furnace_boat": "Tropenholzboot mit Ofen",
   "item.boatcontainer.acacia_furnace_boat": "Akazienholzboot mit Ofen",
   "item.boatcontainer.dark_oak_furnace_boat": "Schwarzeichenholzboot mit Ofen",
+  "item.boatcontainer.mangrove_furnace_boat": "Mangrovenholzboot mit Ofen",
   "item.boatcontainer.stripped_bamboo_furnace_boat": "Entrindetes Bambusboot mit Ofen",
 
   "entity.boatcontainer.chest_boat": "Boot mit Truhe",
