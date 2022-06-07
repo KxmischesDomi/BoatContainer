@@ -34,18 +34,26 @@ import java.util.List;
  */
 public class ModItems {
 
-	public static CustomBoatItem[] CHEST_BOAT = registerBoat("chest_boat", ModEntities.CHEST_BOAT, ChestBoatEntity::new);
+	public static CustomBoatItem[] CHEST_BOAT = registerBoat("chest_boat", ModEntities.CHEST_BOAT, ChestBoatEntity::new, true);
 	public static CustomBoatItem[] ENDER_CHEST_BOAT = registerBoat("ender_chest_boat", ModEntities.ENDER_CHEST_BOAT, EnderChestBoatEntity::new);
 	public static CustomBoatItem[] FURNACE_BOAT = registerBoat("furnace_boat", ModEntities.FURNACE_BOAT, FurnaceBoatEntity::new);
 
 	public static void init() {}
 
 	public static CustomBoatItem[] registerBoat(String name, EntityType<? extends OverriddenBoatEntity> type, Function5<EntityType<? extends OverriddenBoatEntity>, Level, Double, Double, Double, ? extends OverriddenBoatEntity> instanceCreator) {
+		return registerBoat(name, type, instanceCreator, false);
+	}
+
+	public static CustomBoatItem[] registerBoat(String name, EntityType<? extends OverriddenBoatEntity> type, Function5<EntityType<? extends OverriddenBoatEntity>, Level, Double, Double, Double, ? extends OverriddenBoatEntity> instanceCreator, boolean hideItem) {
 
 		List<CustomBoatItem> list = new ArrayList<>();
 
 		for (Type value : Type.values()) {
-			CustomBoatItem item = register(value.getName() + "_" + name, new CustomBoatItem(type, instanceCreator, value, new Properties().stacksTo(1).tab(CreativeModeTab.TAB_TRANSPORTATION)));
+			Properties settings = new Properties().stacksTo(1);
+			if (!hideItem) {
+				settings.tab(CreativeModeTab.TAB_TRANSPORTATION);
+			}
+			CustomBoatItem item = register(value.getName() + "_" + name, new CustomBoatItem(type, instanceCreator, value, settings));
 			list.add(item);
 			registerBoatDispenserBehavior(item, type, instanceCreator);
 		}
