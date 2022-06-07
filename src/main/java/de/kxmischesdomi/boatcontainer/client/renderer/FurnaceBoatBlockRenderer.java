@@ -18,9 +18,19 @@ public class FurnaceBoatBlockRenderer extends BoatBlockRenderer {
 	}
 
 	@Override
-	public void setBlockPosition(PoseStack matrixStack, float f) {
+	public void preModify(PoseStack matrixStack, float f) {
 		matrixStack.mulPose(Vector3f.YP.rotationDegrees(-f));
+	}
+
+	@Override
+	public void afterModify(PoseStack matrixStack, float f) {
 		matrixStack.translate(0, 0.375D, -0.75D);
 		matrixStack.scale(0.9f, 0.9f, 0.9f);
 	}
+
+	@Override
+	public Vector3f getDamagingRotation() {
+		return Vector3f.XN;
+	}
+
 }
