@@ -26,7 +26,12 @@ public abstract class AbstractBoatBlockRenderer extends BoatRenderer {
 	}
 
 	public abstract BlockState getBlockState(Boat boatEntity);
-	public abstract void setBlockPosition(PoseStack matrixStack, float f);
+	public abstract void preModify(PoseStack matrixStack, float f);
+	public abstract void afterModify(PoseStack matrixStack, float f);
+
+	public Vector3f getDamagingRotation() {
+		return Vector3f.XP;
+	}
 
 	@Override
 	public void render(Boat boatEntity, float f, float g, PoseStack matrixStack, MultiBufferSource vertexConsumerProvider, int i) {
@@ -34,9 +39,9 @@ public abstract class AbstractBoatBlockRenderer extends BoatRenderer {
 
 		BlockState blockState = getBlockState(boatEntity);
 		if (blockState == null) return;
+		preModify(matrixStack, f);
 
 		matrixStack.pushPose();
-		setBlockPosition(matrixStack, f);
 
 		float h = (float) boatEntity.getHurtTime() - g;
 		float j = boatEntity.getDamage() - g;
@@ -44,7 +49,7 @@ public abstract class AbstractBoatBlockRenderer extends BoatRenderer {
 			j = 0.0F;
 		}
 		if (h > 0.0F) {
-			matrixStack.mulPose(Vector3f.XP.rotationDegrees(Mth.sin(h) * h * j / 10.0F * (float) boatEntity.getHurtDir()));
+			matrixStack.mulPose(getDamagingRotation().rotationDegrees(Mth.sin(h) * h * j / 10.0F * (float) boatEntity.getHurtDir()));
 		}
 
 		float k = boatEntity.getBubbleAngle(g);
@@ -54,6 +59,7 @@ public abstract class AbstractBoatBlockRenderer extends BoatRenderer {
 
 		matrixStack.translate(-0.45, -0.2, -0.035);
 		matrixStack.scale(0.9f, 0.9f, 0.9f);
+		afterModify(matrixStack, f);
 		Minecraft.getInstance().getBlockRenderer().renderSingleBlock(blockState, matrixStack, vertexConsumerProvider, i, OverlayTexture.NO_OVERLAY);
 		matrixStack.popPose();
 
