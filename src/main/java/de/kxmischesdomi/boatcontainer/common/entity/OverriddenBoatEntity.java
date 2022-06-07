@@ -47,7 +47,7 @@ public abstract class OverriddenBoatEntity extends Boat {
 			this.setHurtTime(10);
 			this.setDamage(this.getDamage() + amount * 10.0F);
 			this.markHurt();
-			this.gameEvent(GameEvent.ENTITY_DAMAGED, source.getEntity());
+			this.gameEvent(GameEvent.ENTITY_DAMAGE, source.getEntity());
 			boolean bl = source.getEntity() instanceof Player && ((Player)source.getEntity()).getAbilities().instabuild;
 			if (bl || this.getDamage() > 40.0F) {
 				if (!bl && this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {

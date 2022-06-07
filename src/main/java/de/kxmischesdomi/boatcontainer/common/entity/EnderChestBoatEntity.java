@@ -1,7 +1,8 @@
 package de.kxmischesdomi.boatcontainer.common.entity;
 
 import de.kxmischesdomi.boatcontainer.common.registry.ModEntities;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
@@ -47,7 +48,7 @@ public class EnderChestBoatEntity extends BoatWithBlockEntity {
 		PlayerEnderChestContainer enderChestInventory = playerEntity.getEnderChestInventory();
 		playerEntity.openMenu(new SimpleMenuProvider((syncId, inventory, playerx) -> {
 			return ChestMenu.threeRows(syncId, inventory, enderChestInventory);
-		}, new TranslatableComponent(this.getType().getDescriptionId())));
+		}, MutableComponent.create(new TranslatableContents(this.getType().getDescriptionId()))));
 		return InteractionResult.SUCCESS;
 	}
 

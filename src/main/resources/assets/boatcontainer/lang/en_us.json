@@ -13,6 +13,7 @@
   "item.boatcontainer.jungle_ender_chest_boat": "Jungle Ender Chest Boat",
   "item.boatcontainer.acacia_ender_chest_boat": "Acacia Ender Chest Boat",
   "item.boatcontainer.dark_oak_ender_chest_boat": "Dark Oak Ender Chest Boat",
+  "item.boatcontainer.mangrove_ender_chest_boat": "Mangrove Ender Chest Boat",
   "item.boatcontainer.stripped_bamboo_ender_chest_boat": "Stripped Bamboo Ender Chest Boat",
 
   "item.boatcontainer.oak_furnace_boat": "Oak Furnace Boat",
@@ -21,6 +22,7 @@
   "item.boatcontainer.jungle_furnace_boat": "Jungle Furnace Boat",
   "item.boatcontainer.acacia_furnace_boat": "Acacia Furnace Boat",
   "item.boatcontainer.dark_oak_furnace_boat": "Dark Oak Furnace Boat",
+  "item.boatcontainer.mangrove_furnace_boat": "Mangrove Furnace Boat",
   "item.boatcontainer.stripped_bamboo_furnace_boat": "Stripped Bamboo Furnace Boat",
 
   "entity.boatcontainer.chest_boat": "Chest Boat",

@@ -22,7 +22,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public abstract class AbstractBoatBlockRenderer extends BoatRenderer {
 
 	public AbstractBoatBlockRenderer(Context context) {
-		super(context);
+		super(context, false);
 	}
 
 	public abstract BlockState getBlockState(Boat boatEntity);
