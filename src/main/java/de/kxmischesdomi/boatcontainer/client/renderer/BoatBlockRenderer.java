@@ -17,7 +17,6 @@ import net.minecraft.world.level.block.state.BlockState;
 @Environment(EnvType.CLIENT)
 public class BoatBlockRenderer extends AbstractBoatBlockRenderer {
 
-
 	public BoatBlockRenderer(Context context) {
 		super(context);
 	}
@@ -31,9 +30,14 @@ public class BoatBlockRenderer extends AbstractBoatBlockRenderer {
 	}
 
 	@Override
-	public void setBlockPosition(PoseStack matrixStack, float f) {
+	public void preModify(PoseStack matrixStack, float f) {
 		matrixStack.mulPose(Vector3f.YP.rotationDegrees(180 -f));
 		matrixStack.translate(0.0D, 0.375D, 0.0D);
+	}
+
+	@Override
+	public void afterModify(PoseStack matrixStack, float f) {
+
 	}
 
 }
