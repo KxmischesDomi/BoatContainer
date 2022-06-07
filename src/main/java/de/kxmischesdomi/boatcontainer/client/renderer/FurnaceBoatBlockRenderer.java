@@ -24,8 +24,7 @@ public class FurnaceBoatBlockRenderer extends BoatBlockRenderer {
 
 	@Override
 	public void afterModify(PoseStack matrixStack, float f) {
-		matrixStack.translate(0, 0.375D, -0.75D);
-		matrixStack.scale(0.9f, 0.9f, 0.9f);
+		matrixStack.translate(0, 0.375, -0.85D);
 	}
 
 	@Override
