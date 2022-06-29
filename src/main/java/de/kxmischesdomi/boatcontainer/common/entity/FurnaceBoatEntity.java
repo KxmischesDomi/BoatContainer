@@ -1,6 +1,7 @@
 package de.kxmischesdomi.boatcontainer.common.entity;
 
 import de.kxmischesdomi.boatcontainer.common.registry.ModEntities;
+import de.kxmischesdomi.boatcontainer.common.registry.ModItems;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -42,6 +43,15 @@ public class FurnaceBoatEntity extends BoatWithBlockEntity {
 
 	public FurnaceBoatEntity(Level world) {
 		super(ModEntities.CHEST_BOAT, world);
+	}
+
+	@Override
+	public ItemStack getPickResult() {
+		int ordinal = getBoatType().ordinal();
+		if (ModItems.FURNACE_BOAT.length > ordinal) {
+			return new ItemStack(ModItems.FURNACE_BOAT[ordinal]);
+		}
+		return super.getPickResult();
 	}
 
 	@Override
