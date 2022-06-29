@@ -37,7 +37,6 @@ public abstract class OverriddenBoatEntity extends Boat {
 		this.zo = z;
 	}
 
-
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
 		if (this.isInvulnerableTo(source)) {

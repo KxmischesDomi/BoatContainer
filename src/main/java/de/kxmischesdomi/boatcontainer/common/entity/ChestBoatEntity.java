@@ -1,6 +1,7 @@
 package de.kxmischesdomi.boatcontainer.common.entity;
 
 import de.kxmischesdomi.boatcontainer.common.registry.ModEntities;
+import de.kxmischesdomi.boatcontainer.common.registry.ModItems;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Inventory;
@@ -8,6 +9,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ChestMenu;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -45,6 +47,15 @@ public class ChestBoatEntity extends StorageBoatEntity {
 		if (!damageSource.isExplosion()) {
 			this.spawnAtLocation(Items.CHEST.asItem());
 		}
+	}
+
+	@Override
+	public ItemStack getPickResult() {
+		int ordinal = getBoatType().ordinal();
+		if (ModItems.CHEST_BOAT.length > ordinal) {
+			return new ItemStack(ModItems.CHEST_BOAT[ordinal]);
+		}
+		return super.getPickResult();
 	}
 
 	@Override
