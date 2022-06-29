@@ -10,6 +10,7 @@ import net.minecraft.world.*;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.HasCustomInventoryScreen;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -30,7 +31,7 @@ import java.util.Iterator;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public abstract class StorageBoatEntity extends BoatWithBlockEntity implements Container, MenuProvider {
+public abstract class StorageBoatEntity extends BoatWithBlockEntity implements Container, MenuProvider, HasCustomInventoryScreen {
 
 	private NonNullList<ItemStack> inventory;
 	private ResourceLocation lootTableId;
@@ -44,6 +45,11 @@ public abstract class StorageBoatEntity extends BoatWithBlockEntity implements C
 	public StorageBoatEntity(EntityType<? extends Boat> entityType, Level world, double x, double y, double z) {
 		super(entityType, world, x, y, z);
 		this.inventory = NonNullList.withSize(36, ItemStack.EMPTY);
+	}
+
+	@Override
+	public void openCustomInventoryScreen(Player player) {
+		player.openMenu(this);
 	}
 
 	@Override

@@ -9,6 +9,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.HasCustomInventoryScreen;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.inventory.ChestMenu;
@@ -28,7 +29,7 @@ import java.util.List;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public class EnderChestBoatEntity extends BoatWithBlockEntity {
+public class EnderChestBoatEntity extends BoatWithBlockEntity implements HasCustomInventoryScreen {
 
 	public EnderChestBoatEntity(EntityType<? extends Boat> entityType, Level world) {
 		super(entityType, world);
@@ -43,9 +44,19 @@ public class EnderChestBoatEntity extends BoatWithBlockEntity {
 	}
 
 	@Override
+	public void openCustomInventoryScreen(Player player) {
+		openEnderchest(player);
+	}
+
+	@Override
 	public InteractionResult sneakInteract(Player playerEntity, InteractionHand hand) {
-		PlayerEnderChestContainer enderChestInventory = playerEntity.getEnderChestInventory();
-		playerEntity.openMenu(new SimpleMenuProvider((syncId, inventory, playerx) -> {
+		openEnderchest(playerEntity);
+		return InteractionResult.SUCCESS;
+	}
+
+	private void openEnderchest(Player player) {
+		PlayerEnderChestContainer enderChestInventory = player.getEnderChestInventory();
+		player.openMenu(new SimpleMenuProvider((syncId, inventory, playerx) -> {
 			return ChestMenu.threeRows(syncId, inventory, enderChestInventory);
 		}, new TranslatableComponent(this.getType().getDescriptionId())));
 		return InteractionResult.SUCCESS;
