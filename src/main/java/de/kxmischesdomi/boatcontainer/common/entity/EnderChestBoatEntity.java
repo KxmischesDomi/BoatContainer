@@ -9,7 +9,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.HasCustomInventoryScreen;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.inventory.ChestMenu;
@@ -59,7 +58,6 @@ public class EnderChestBoatEntity extends BoatWithBlockEntity implements HasCust
 		player.openMenu(new SimpleMenuProvider((syncId, inventory, playerx) -> {
 			return ChestMenu.threeRows(syncId, inventory, enderChestInventory);
 		}, new TranslatableComponent(this.getType().getDescriptionId())));
-		return InteractionResult.SUCCESS;
 	}
 
 	@Override

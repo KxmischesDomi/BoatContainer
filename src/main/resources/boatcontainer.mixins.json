@@ -5,7 +5,11 @@
 	"compatibilityLevel": "JAVA_16",
 	"mixins": [
 		"BoatEntityAccessor",
-		"BoatEntityMixin"
+		"BoatEntityMixin",
+		"ServerGamePacketListenerImplMixin"
+	],
+	"client": [
+		"client.MultiPlayerGameModeMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
