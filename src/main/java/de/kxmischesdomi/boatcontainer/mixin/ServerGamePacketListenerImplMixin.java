@@ -21,11 +21,8 @@ public class ServerGamePacketListenerImplMixin {
 
 	@Inject(method = "handlePlayerCommand", at = @At(value = "INVOKE", shift = At.Shift.BEFORE, target = "Lnet/minecraft/network/protocol/game/ServerboundPlayerCommandPacket;getAction()Lnet/minecraft/network/protocol/game/ServerboundPlayerCommandPacket$Action;"), cancellable = true)
 	public void handlePlayerCommandMixin(ServerboundPlayerCommandPacket serverboundPlayerCommandPacket, CallbackInfo ci) {
-		System.out.println("a");
 		if (serverboundPlayerCommandPacket.getAction() == ServerboundPlayerCommandPacket.Action.OPEN_INVENTORY) {
-		System.out.println("b");
 			if (player.getVehicle() instanceof HasCustomInventoryScreen screen) {
-		System.out.println("c");
 				screen.openCustomInventoryScreen(player);
 				ci.cancel();
 			}
