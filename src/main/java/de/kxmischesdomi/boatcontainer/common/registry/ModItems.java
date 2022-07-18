@@ -49,13 +49,18 @@ public class ModItems {
 		List<CustomBoatItem> list = new ArrayList<>();
 
 		for (Type value : Type.values()) {
-			Properties settings = new Properties().stacksTo(1);
-			if (!hideItem) {
-				settings.tab(CreativeModeTab.TAB_TRANSPORTATION);
+			try {
+				Properties settings = new Properties().stacksTo(1);
+				if (!hideItem) {
+					settings.tab(CreativeModeTab.TAB_TRANSPORTATION);
+				}
+				CustomBoatItem item = register(value.getName() + "_" + name, new CustomBoatItem(type, instanceCreator, value, settings));
+				list.add(item);
+				registerBoatDispenserBehavior(item, type, instanceCreator);
+			} catch (Exception exception) {
+				// Dont block mod loading for issues with other mods
+				exception.printStackTrace();
 			}
-			CustomBoatItem item = register(value.getName() + "_" + name, new CustomBoatItem(type, instanceCreator, value, settings));
-			list.add(item);
-			registerBoatDispenserBehavior(item, type, instanceCreator);
 		}
 
 		return list.toArray(new CustomBoatItem[0]);
