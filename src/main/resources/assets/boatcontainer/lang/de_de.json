@@ -24,6 +24,7 @@
   "item.boatcontainer.stripped_bamboo_furnace_boat": "Entrindetes Bambusboot mit Ofen",
 
   "entity.boatcontainer.chest_boat": "Boot mit Truhe",
-  "entity.boatcontainer.ender_chest_boat": "Boot mit Endertruhe"
+  "entity.boatcontainer.ender_chest_boat": "Boot mit Endertruhe",
+  "entity.boatcontainer.furnace_boat": "Boot mit Ofen"
 
 }
