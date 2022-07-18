@@ -28,6 +28,6 @@
 
   "entity.boatcontainer.chest_boat": "Boat with Chest",
   "entity.boatcontainer.ender_chest_boat": "Boat with Ender Chest",
-  "entity.boatcontainer.ender_chest_boat": "Boat with Furnace"
+  "entity.boatcontainer.furnace_boat": "Boat with Furnace"
 
 }
